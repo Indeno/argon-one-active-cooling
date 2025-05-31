@@ -1,0 +1,32 @@
+{
+  "name": "ArgonOne Active Linear Cooling - Classic",
+  "version": "30b",
+  "slug": "argon_one_temp_linear_linear",
+  "description": "Actively keeping your Argon One cool.",
+  "arch": ["armhf", "armv7", "aarch64"],
+  "auth_api": true,
+  "homeassistant_api": true,
+  "hassio_role": "homeassistant",
+  "hassio_api": true,
+  "startup": "application",
+  "devices": ["/dev/i2c-*"],
+  "map": ["config", "ssl", "addons", "backup", "share", "media"],
+  "options": {
+    "Celsius or Fahrenheit": "F",
+    "Minimum Temperature": 130,
+    "Maximum Temperature": 150,
+    "Create a Fan Speed entity in Home Assistant": false,
+    "Log current temperature every 30 seconds": true,
+    "Modo manual de velocidad": false,
+    "Velocidad manual del ventilador": 0
+  },
+  "schema": {
+    "Celsius or Fahrenheit": "list(C|F)",
+    "Minimum Temperature": "int(0,255)",
+    "Maximum Temperature": "int(0,255)",
+    "Create a Fan Speed entity in Home Assistant": "bool",
+    "Log current temperature every 30 seconds": "bool",
+    "Modo manual de velocidad": "bool",
+    "Velocidad manual del ventilador": "int(0,100)"
+  }
+}
